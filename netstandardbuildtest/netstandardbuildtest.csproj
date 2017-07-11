@@ -1,7 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFrameworks>netstandard1.0;xamarinios10;monoandroid6</TargetFrameworks>
   </PropertyGroup>
 
+	<PropertyGroup Condition="'$(TargetFramework)' == 'xamarinios10'">
+        <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid6'">
+        <TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
+    </PropertyGroup>
+	
 </Project>
