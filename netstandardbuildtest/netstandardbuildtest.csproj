@@ -1,30 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFrameworks>netstandard1.0;xamarinios10;monoandroid6;portable-net45+win8+wpa81</TargetFrameworks>
-		<DefaultLanguage>en-US</DefaultLanguage>
-		<PackageVersion>1.0.0</PackageVersion>
-		<Description>desc for ($(TargetFramework))</Description>
-		<Product>netstandardbuildtest ($(TargetFramework))</Product>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.0;xamarinios10;monoandroid6;portable-net45+win8+wpa81</TargetFrameworks>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Description>desc for ($(TargetFramework))</Description>
+    <Product>netstandardbuildtest ($(TargetFramework))</Product>
+  </PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)' == 'xamarinios10'">
-		<TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
-		<LanguageTargets>$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets</LanguageTargets>
-	</PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Platforms\**\*.*" />
+  </ItemGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid6'">
-		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
-		<LanguageTargets>$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets</LanguageTargets>
-	</PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'xamarinios10'">
+    <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+    <LanguageTargets>$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets</LanguageTargets>
+  </PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)' == 'portable-net45+win8+wpa81'">
-		<TargetFrameworkIdentifier>.NETPortable</TargetFrameworkIdentifier>
-		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-		<TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
-		<NugetTargetMoniker>.NETPortable,Version=v0.0,Profile=Profile111</NugetTargetMoniker>
-		<LanguageTargets>$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets</LanguageTargets>
+  <ItemGroup Condition="'$(TargetFramework)' == 'xamarinios10'">
+    <Compile Include="Platforms\Other\*.cs" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid6'">
+    <TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
+    <LanguageTargets>$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets</LanguageTargets>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'monoandroid6'">
+    <Compile Include="Platforms\Android\*.cs" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'portable-net45+win8+wpa81'">
+    <TargetFrameworkIdentifier>.NETPortable</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <NugetTargetMoniker>.NETPortable,Version=v0.0,Profile=Profile111</NugetTargetMoniker>
+    <LanguageTargets>$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets</LanguageTargets>
     <IncludeProjectPriFile>false</IncludeProjectPriFile>
-	</PropertyGroup>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'portable-net45+win8+wpa81'">
+    <Compile Include="Platforms\Other\*.cs" />
+  </ItemGroup>
 
 </Project>
