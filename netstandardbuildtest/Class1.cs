@@ -6,7 +6,7 @@ namespace netstandardbuildtest
     {
         public string Say()
         {
-#if NETSTANDARD1_0
+#if NETSTANDARD1_0 || PORTABLE111
             throw new NotSupportedException("This PCL assembly must not be used at runtime..");
 #else
             return Message.Greeting;
