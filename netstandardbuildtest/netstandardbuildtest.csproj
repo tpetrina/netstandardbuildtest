@@ -9,5 +9,6 @@
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid6'">
 		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
+		<LanguageTargets>$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets</LanguageTargets>
 	</PropertyGroup>
 </Project>
