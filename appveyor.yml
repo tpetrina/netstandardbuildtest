@@ -4,6 +4,9 @@ build_script:
   - cmd: msbuild netstandardbuildtest\netstandardbuildtest.csproj /t:restore /p:Configuration=Release
   - cmd: msbuild netstandardbuildtest\netstandardbuildtest.csproj /t:pack /p:Configuration=Release
 
+after_build:
+  - cmd: move netstandardbuildtest\netstandardbuildtest\bin\Release\*.nupkg .
+
 artifacts:
   - path: '*.nupkg'
   
