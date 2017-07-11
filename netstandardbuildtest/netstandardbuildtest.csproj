@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.0;xamarinios10;monoandroid6</TargetFrameworks>
+		<TargetFrameworks>netstandard1.0;xamarinios10;monoandroid6;portable-net45+win8+wpa81</TargetFrameworks>
 		<DefaultLanguage>en-US</DefaultLanguage>
 		<PackageVersion>1.0.0</PackageVersion>
 		<Description>desc for ($(TargetFramework))</Description>
@@ -16,6 +16,14 @@
 	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid6'">
 		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
 		<LanguageTargets>$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets</LanguageTargets>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'portable-net45+win8+wpa81'">
+		<TargetFrameworkIdentifier>.NETPortable</TargetFrameworkIdentifier>
+		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+		<TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+		<NugetTargetMoniker>.NETPortable,Version=v0.0,Profile=Profile32</NugetTargetMoniker>
+		<LanguageTargets>$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets</LanguageTargets>
 	</PropertyGroup>
 
 </Project>
