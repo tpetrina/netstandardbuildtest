@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0;xamarinios10;monoandroid6;portable-net45+win8+wpa81</TargetFrameworks>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageVersion>1.1.0</PackageVersion>
+    <PackageVersion>1.1.1</PackageVersion>
     <Description>desc for ($(TargetFramework))</Description>
     <Product>netstandardbuildtest ($(TargetFramework))</Product>
   </PropertyGroup>
@@ -37,6 +37,7 @@
     <NugetTargetMoniker>.NETPortable,Version=v0.0,Profile=Profile111</NugetTargetMoniker>
     <LanguageTargets>$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets</LanguageTargets>
     <IncludeProjectPriFile>false</IncludeProjectPriFile>
+    <DefineConstants>$(DefineConstants);PORTABLE111</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'portable-net45+win8+wpa81'">
