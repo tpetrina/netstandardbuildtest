@@ -2,13 +2,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFrameworks>netstandard1.0;xamarinios10;monoandroid6</TargetFrameworks>
+		<DefaultLanguage>en-US</DefaultLanguage>
+		<PackageVersion>1.0.0</PackageVersion>
+		<Description>desc for ($(TargetFramework))</Description>
+		<Product>netstandardbuildtest ($(TargetFramework))</Product>
 	</PropertyGroup>
+
 	<PropertyGroup Condition="'$(TargetFramework)' == 'xamarinios10'">
 		<TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
 		<LanguageTargets>$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets</LanguageTargets>
 	</PropertyGroup>
+
 	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid6'">
 		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
 		<LanguageTargets>$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets</LanguageTargets>
 	</PropertyGroup>
+
 </Project>

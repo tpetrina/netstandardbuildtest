@@ -4,6 +4,10 @@ build_script:
   - cmd: msbuild netstandardbuildtest\netstandardbuildtest.csproj /t:restore /p:Configuration=Release
   - cmd: msbuild netstandardbuildtest\netstandardbuildtest.csproj /t:pack /p:Configuration=Release
 
+nuget:
+  account_feed: true
+  project_feed: true
+  
 artifacts:
   - path: '**\netstandardbuildtest.*.nupkg'
   
