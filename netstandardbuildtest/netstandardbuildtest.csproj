@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFrameworks>netstandard1.0;xamarinios10;monoandroid6;portable-net45+win8+wpa81</TargetFrameworks>
@@ -22,8 +22,9 @@
 		<TargetFrameworkIdentifier>.NETPortable</TargetFrameworkIdentifier>
 		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
 		<TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
-		<NugetTargetMoniker>.NETPortable,Version=v0.0,Profile=Profile32</NugetTargetMoniker>
+		<NugetTargetMoniker>.NETPortable,Version=v0.0,Profile=Profile111</NugetTargetMoniker>
 		<LanguageTargets>$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets</LanguageTargets>
+    <IncludeProjectPriFile>false</IncludeProjectPriFile>
 	</PropertyGroup>
 
 </Project>
